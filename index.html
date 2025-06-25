@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="header">
+            <h1><i class="fas fa-exchange-alt"></i> Conversor de Moedas</h1>
+            <p>Taxas de câmbio em tempo real</p>
+        </div>
+
+        <form id="converterForm">
+            <div class="form-group">
+                <label class="form-label" for="amount">
+                    <i class="fas fa-dollar-sign"></i>
+                    Valor a Converter
+                </label>
+                <input type="number" class="form-control" id="amount" placeholder="Digite o valor..." min="0.01" step="0.01" required>
+            </div>
+
+            <div class="currency-row">
+                <div class="currency-col">
+                    <label class="form-label" for="fromCurrency">
+                        <i class="fas fa-coins"></i>
+                        De
+                    </label>
+                    <select class="form-select" id="fromCurrency" required>
+                        <option value="">Selecione a moeda</option>
+                        <option value="USD">🇺🇸 Dólar Americano (USD)</option>
+                        <option value="EUR">🇪🇺 Euro (EUR)</option>
+                        <option value="BRL" selected>🇧🇷 Real Brasileiro (BRL)</option>
+                        <option value="GBP">🇬🇧 Libra Esterlina (GBP)</option>
+                        <option value="JPY">🇯🇵 Iene Japonês (JPY)</option>
+                        <option value="CHF">🇨🇭 Franco Suíço (CHF)</option>
+                        <option value="CAD">🇨🇦 Dólar Canadense (CAD)</option>
+                        <option value="AUD">🇦🇺 Dólar Australiano (AUD)</option>
+                        <option value="CNY">🇨🇳 Yuan Chinês (CNY)</option>
+                        <option value="ARS">🇦🇷 Peso Argentino (ARS)</option>
+                    </select>
+                </div>
+
+                <button type="button" class="swap-btn" id="swapBtn" title="Trocar moedas">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <div class="currency-col">
+                    <label class="form-label" for="toCurrency">
+                        <i class="fas fa-coins"></i>
+                        Para
+                    </label>
+                    <select class="form-select" id="toCurrency" required>
+                        <option value="">Selecione a moeda</option>
+                        <option value="USD" selected>🇺🇸 Dólar Americano (USD)</option>
+                        <option value="EUR">🇪🇺 Euro (EUR)</option>
+                        <option value="BRL">🇧🇷 Real Brasileiro (BRL)</option>
+                        <option value="GBP">🇬🇧 Libra Esterlina (GBP)</option>
+                        <option value="JPY">🇯🇵 Iene Japonês (JPY)</option>
+                        <option value="CHF">🇨🇭 Franco Suíço (CHF)</option>
+                        <option value="CAD">🇨🇦 Dólar Canadense (CAD)</option>
+                        <option value="AUD">🇦🇺 Dólar Australiano (AUD)</option>
+                        <option value="CNY">🇨🇳 Yuan Chinês (CNY)</option>
+                        <option value="ARS">🇦🇷 Peso Argentino (ARS)</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="convert-btn" id="convertBtn">
+                <i class="fas fa-calculator"></i>
+                Ver Câmbio
+            </button>
+        </form>
+
+        <div id="result" class="result-container" style="display: none;"></div>
+    </main>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+
+</html>
